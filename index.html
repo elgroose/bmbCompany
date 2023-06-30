@@ -10,7 +10,12 @@
 <body>
   
   <div id="header">
-    <button id="team-button">Team</button>
+    <!-- <button id="team-button">Team</button> -->
+
+    <!-- <input type="button" value="PLAY" onclick="play()"> -->
+    <button onclick="toggleAudio()">Play/Pause</button>
+
+  <audio id="audio-player" src="BlueSirens.mp3"></audio>
   </div>
   
 
@@ -43,14 +48,29 @@
  
  
 <script>
-  function play() {
-    var audio = document.getElementById("audio");
-    audio.play();
-  }
+
+
+  // function play() {
+  //   var audio = document.getElementById("audio");
+  //   audio.play();
+  // }
+  const audioPlayer = document.getElementById("audio-player");
+    let isPlaying = false;
+    
+    function toggleAudio() {
+      if (isPlaying) {
+        audioPlayer.pause();
+        isPlaying = false;
+      } else {
+        audioPlayer.play();
+        isPlaying = true;
+      }
+    }
+
+
 </script>
 
-<input type="button" value="PLAY" onclick="play()">
-<audio id="audio" src="BlueSirens.mp3"></audio>
+ 
 
 <script> 
   // JavaScript to open team.html when the "Team" button is clicked
