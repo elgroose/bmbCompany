@@ -6,9 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
   <script src="toggleScript.js" defer></script>
-
- 
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+  
 </head>
 <body>
   
@@ -20,24 +25,34 @@
   </div>
    -->
    <nav class="navbar">
-    <div class="brand-title">Brand Name</div>
+    
+    <div class="brand-title">BMB Co.</div>
+
     <a href="#" class="toggle-button">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
-    </a>
+
+      </a>
+
     <div class="navbar-links">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
+        <li><a  onclick="openModal()" href="#">About        </a></li>
+        <li><a href="#">Team</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
   </nav>
  
-
  
     <section>  
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="modal-close" onclick="closeModal()">&times;</span>
+          <h2>About BMB Co.</h2>
+          <p>An affordable housing developer, rooted in the principles of equity and social justice, focuses on creating housing opportunities for BIPOC (Black, Indigenous, and People of Color) communities. This developer is dedicated to addressing the systemic barriers and disparities that BIPOC individuals face in accessing affordable housing options. By employing inclusive and community-centered approaches, they strive to empower BIPOC communities through sustainable housing solutions that promote economic mobility and cultural preservation. This developer understands the unique needs and challenges faced by BIPOC communities and actively seeks to amplify their voices and participation in the development process. Through collaboration with local stakeholders, they work diligently to ensure that the housing projects reflect the cultural richness and diversity of the communities they serve. By prioritizing affordability, accessibility, and quality, this BIPOC affordable housing developer plays a vital role in fostering inclusive and thriving neighborhoods while advocating for social and economic equality. </p>
+        </div>
+      </div>
    <div class="bg-video">
      <iframe 
     class="bg-video__iframe" 
@@ -56,6 +71,21 @@
 
   <script src="https://embed.cloudflarestream.com/embed/sdk.latest.js"></script>  
 
+
+  <script>
+    // JavaScript to open the modal
+    function openModal() {
+      const modal = document.getElementById("myModal");
+      modal.style.display = "block";
+    }
+    
+    // JavaScript to close the modal
+    function closeModal() {
+      const modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+  </script>
+
 <!-- Your JavaScript code below-->
  <script>
   const player = Stream(document.getElementById('stream-player'));
@@ -68,6 +98,8 @@
     player.play();
   });
 </script>
+ 
+ 
  
  
 <script>
@@ -94,14 +126,7 @@
 </script>
 
  
-
-<script> 
-  // JavaScript to open team.html when the "Team" button is clicked
-  const teamButton = document.getElementById("team-button");
-  
-  teamButton.addEventListener("click", function() {
-    window.location.href = "team.html";
-  });</script>  
+ 
 
  
 
