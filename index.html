@@ -3,20 +3,27 @@
 <head>
   <title>Default Fullscreen iFrame Example</title>
   <meta charset="utf-8">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
+
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+ 
 
 </head>
 <body>
   
-  <div id="header">
-   
-    <button  onclick="toggleAudio()">Play/Pause</button>
+  <div id="music-toggle">
+    <button id="music-button" onclick="toggleAudio()" class="material-symbols-outlined">
+      music_off
+    </button>
 
-  <audio id="audio-player" src="BlueSirens.mp3"></audio>
+    <audio id="audio-player" src="BlueSirens.mp3"></audio>
+
   </div>
   
- 
+
 
  
    <div class="bg-video">
@@ -51,22 +58,20 @@
  
  
 <script>
-
-
-  // function play() {
-  //   var audio = document.getElementById("audio");
-  //   audio.play();
-  // }
+   
   const audioPlayer = document.getElementById("audio-player");
     let isPlaying = false;
+    var musicButton = document.getElementById("music-button");
     
     function toggleAudio() {
       if (isPlaying) {
         audioPlayer.pause();
         isPlaying = false;
+        musicButton.innerHTML = " music_off "
       } else {
         audioPlayer.play();
         isPlaying = true;
+        musicButton.innerHTML = " music_note "
       }
     }
 
